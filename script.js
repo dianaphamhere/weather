@@ -1,3 +1,7 @@
+var wImg = document.getElementById("icon");
+var wWeather = document.getElementsByClassName("weather");
+var wTemp = document.getElementsByClassName("temp");
+
 var requestURL = "http://api.openweathermap.org/data/2.5/weather?q=Seattle&APPID=04d3244ad67b8088a3ddf5746a5ac0de";
 var request = new XMLHttpRequest();
 
@@ -11,4 +15,6 @@ request.onload = function(){
 
 	var icon = "http://api.openweathermap.org/img/w/" + data.weather[0].icon + ".png"
 	console.log(icon);
+
+	wImg.setAttribute("src", icon);
 }
