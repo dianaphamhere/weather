@@ -6,6 +6,9 @@ request.responseType = 'json';
 request.send();
 
 request.onload = function(){
-	var weatherData = request.response;
-	console.log(weatherData);
+	var data = request.response;
+	console.log(data);
+
+	var icon = "http://api.openweathermap.org/img/w/" + data.weather[0].icon + ".png"
+	console.log(icon);
 }
