@@ -14,9 +14,10 @@ request.onload = function(){
 	console.log(data);
 
 	var icon = "http://api.openweathermap.org/img/w/" + data.weather[0].icon + ".png"
-	wImg.setAttribute("src", icon);
-
 	var temp = Math.floor(data.main.temp);
-	console.log(temp);
+	var weather = data.weather[0].main;
+	
+	wImg.setAttribute("src", icon);
 	wTemp.innerHTML = temp + " F";
+	wWeather.innerHTML = weather;
 }
